@@ -44,17 +44,10 @@ spring:
     user: serverdriven
     password: serverdriven
     locations: classpath:db/migration
-jwt:
-  secret-key: hidehidehidehidehidehidehidehidehide
 logging:
   level:
-    org.springframework.kafka.*: OFF
-    org.springframework.kafka.listener.[KafkaMessageListenerContainer$ListenerConsumer]: OFF
-    org.apache.kafka.*: OFF
-    kafka.*: OFF
-    org.apache.zookeeper.*: OFF
-    io.r2dbc.postgresql.QUERY: DEBUG # for queries
-    io.r2dbc.postgresql.PARAM: DEBUG # for parameters
+    io.r2dbc.*.QUERY: DEBUG # for queries
+    io.r2dbc.*.PARAM: DEBUG # for parameters
 
 client:
   pg:

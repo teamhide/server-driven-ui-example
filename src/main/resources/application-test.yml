@@ -39,13 +39,6 @@ spring:
     user: serverdriven
     password: serverdriven
     locations: classpath:db/migration
-jwt:
-  secret-key: hidehidehidehidehidehidehidehidehide
 logging:
   level:
-    org.springframework.kafka.*: OFF
-    org.springframework.kafka.listener.[KafkaMessageListenerContainer$ListenerConsumer]: OFF
-    org.apache.kafka.*: OFF
-    kafka.*: OFF
-    org.apache.zookeeper.*: OFF
     org.springframework.r2dbc.*: DEBUG
