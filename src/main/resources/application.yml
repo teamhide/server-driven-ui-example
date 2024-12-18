@@ -1,0 +1,63 @@
+server:
+  port: 8080
+spring:
+  profiles:
+    group:
+      default: clients
+      test: clients-test
+      staging: clients-staging
+      prod: clients-prod
+  mvc:
+    static-path-pattern: /test/**
+  main:
+    banner-mode: off
+  r2dbc:
+    writer:
+      driver: pool
+      protocol: mysql
+      host: localhost
+      port: 33061
+      user: serverdriven
+      password: serverdriven
+      database: serverdriven
+    reader:
+      driver: pool
+      protocol: mysql
+      host: localhost
+      port: 33061
+      user: serverdriven
+      password: serverdriven
+      database: serverdriven
+  data:
+    r2dbc:
+      repositories:
+        enabled: true
+    redis:
+      host: localhost
+      port: 63792
+      connect-timeout: 1000
+      timeout: 2000
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    url: jdbc:mysql://localhost:33061/serverdriven?useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+    user: serverdriven
+    password: serverdriven
+    locations: classpath:db/migration
+jwt:
+  secret-key: hidehidehidehidehidehidehidehidehide
+logging:
+  level:
+    org.springframework.kafka.*: OFF
+    org.springframework.kafka.listener.[KafkaMessageListenerContainer$ListenerConsumer]: OFF
+    org.apache.kafka.*: OFF
+    kafka.*: OFF
+    org.apache.zookeeper.*: OFF
+    io.r2dbc.postgresql.QUERY: DEBUG # for queries
+    io.r2dbc.postgresql.PARAM: DEBUG # for parameters
+
+client:
+  pg:
+    url: http://localhost:8080
+    connect-timeout-milliseconds: 1000
+    read-timeout-milliseconds: 1000
