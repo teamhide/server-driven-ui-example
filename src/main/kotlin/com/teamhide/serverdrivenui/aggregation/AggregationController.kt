@@ -1,4 +1,4 @@
-package com.teamhide.serverdrivenui.aggregation.presentation
+package com.teamhide.serverdrivenui.aggregation
 
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController

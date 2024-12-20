@@ -3,6 +3,7 @@ CREATE TABLE row_setting(
     name VARCHAR(50) NOT NULL,
     row_type VARCHAR(30) NOT NULL,
     row_id VARCHAR(30) NOT NULL,
+    location VARCHAR(30) NOT NULL,
     seq INT NOT NULL,
     enabled TINYINT(1) NOT NULL,
     created_at DATETIME(6),

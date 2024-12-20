@@ -1,4 +1,4 @@
-package com.teamhide.serverdrivenui.aggregation.domain
+package com.teamhide.serverdrivenui.aggregation
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Column
@@ -15,6 +15,9 @@ data class RowSettingEntity(
 
     @Column("row_id")
     val rowId: String,
+
+    @Column("location")
+    val location: Location,
 
     @Column("seq")
     val seq: Int,
